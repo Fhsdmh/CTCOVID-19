@@ -344,7 +344,7 @@
                               <?php
                                 $conn = open_db();
 
-                                $sql = mysqli_query($conn, "SELECT * FROM user_activity WHERE diagnosis='karantina'");
+                                $sql = mysqli_query($conn, "SELECT * FROM user_diagnosis WHERE diagnosis='karantina'");
                                 $tes = mysqli_num_rows($sql);
                                 echo '<tr>
                                       '.$tes.'
@@ -370,7 +370,7 @@
                               <?php
                                 $conn = open_db();
 
-                                $sql = mysqli_query($conn, "SELECT * FROM user_activity WHERE diagnosis='sakit'");
+                                $sql = mysqli_query($conn, "SELECT * FROM user_diagnosis WHERE diagnosis='sakit'");
                                 $tes = mysqli_num_rows($sql);
                                 echo '<tr>
                                       '.$tes.'
