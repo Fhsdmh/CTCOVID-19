@@ -35,10 +35,11 @@
         <div class="row">
           <div class="col-4">
             <div class="list-group" id="list-tab" role="tablist">
-   
-              <a class="list-group-item list-group-item-action border-top-0 border-left-0 border-right-0" id="user_activity" data-toggle="list" href="#list-user-activity" role="tab" aria-controls="user-activity">Tabel User Activity</a>
+
+              <a class="list-group-item list-group-item-action border-top-0 border-left-0 border-right-0 active" id="user_activity" data-toggle="list" href="#list-user-activity" role="tab" aria-controls="user-activity">Tabel User Activity</a>
               <a class="list-group-item list-group-item-action border-top-0 border-left-0 border-right-0" id="user_diagnosis" data-toggle="list" href="#list-user-diagnosis" role="tab" aria-controls="user-diagnosis">Table User Diagnosis</a>
-              <a class="list-group-item list-group-item-action border-top-0 border-left-0 border-right-0" id="grafik" data-toggle="list" href="#list-grafik" role="tab" aria-controls="grafik">Grafik</a>
+              <a class="list-group-item list-group-item-action border-top-0 border-left-0 border-right-0" id="grafik_user_activity" data-toggle="list" href="#list-grafik-user-activity" role="tab" aria-controls="grafik-user-activity">Grafik User Activity</a>
+              <a class="list-group-item list-group-item-action border-top-0 border-left-0 border-right-0" id="grafik_user_diagnosis" data-toggle="list" href="#list-grafik-user-diagnosis" role="tab" aria-controls="grafik-user-diagnosis">Grafik User Diagnosis</a>
 
             </div>
           </div>
@@ -346,7 +347,7 @@
                               <?php
                                 $conn = open_db();
 
-                                $sql = mysqli_query($conn, "SELECT * FROM user_activity WHERE diagnosis='karantina'");
+                                $sql = mysqli_query($conn, "SELECT * FROM user_diagnosis WHERE diagnosis='karantina'");
                                 $tes = mysqli_num_rows($sql);
                                 echo '<tr>
                                       '.$tes.'
@@ -372,7 +373,7 @@
                               <?php
                                 $conn = open_db();
 
-                                $sql = mysqli_query($conn, "SELECT * FROM user_activity WHERE diagnosis='sakit'");
+                                $sql = mysqli_query($conn, "SELECT * FROM user_diagnosis WHERE diagnosis='sakit'");
                                 $tes = mysqli_num_rows($sql);
                                 echo '<tr>
                                       '.$tes.'
