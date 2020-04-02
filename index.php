@@ -35,10 +35,9 @@
         <div class="row">
           <div class="col-4">
             <div class="list-group" id="list-tab" role="tablist">
-              <a class="list-group-item list-group-item-action border-left-0 border-right-0 active" id="user" data-toggle="list" href="#list-user" role="tab" aria-controls="user">Tabel User</a>
+   
               <a class="list-group-item list-group-item-action border-top-0 border-left-0 border-right-0" id="user_activity" data-toggle="list" href="#list-user-activity" role="tab" aria-controls="user-activity">Tabel User Activity</a>
               <a class="list-group-item list-group-item-action border-top-0 border-left-0 border-right-0" id="user_diagnosis" data-toggle="list" href="#list-user-diagnosis" role="tab" aria-controls="user-diagnosis">Table User Diagnosis</a>
-              <a class="list-group-item list-group-item-action border-top-0 border-left-0 border-right-0" id="user_short" data-toggle="list" href="#list-user-short" role="tab" aria-controls="user-short">Tabel User Short</a>
               <a class="list-group-item list-group-item-action border-top-0 border-left-0 border-right-0" id="grafik" data-toggle="list" href="#list-grafik" role="tab" aria-controls="grafik">Grafik</a>
             </div>
           </div>
@@ -53,83 +52,6 @@
         </nav>
           <div class="col-12">
             <div class="tab-content" id="nav-tabContent">
-              <div class="tab-pane fade show active" id="list-user" role="tabpanel" aria-labelledby="user">
-                <div class="card mt-3">
-                  <div class="card-header text-center font-weight-bold">
-                    TABEL USER
-                  </div>
-                  <div class="card-body">
-                    <div class="table-wrapper-scroll-y my-custom-scrollbar">
-                      <div class="wrapper-editor">
-
-                        <table id="example" class="table-sm table-hover datatable table table-striped table-bordered" cellspacing="0" width="100%">
-                          <thead class="thead-dark">
-                            <tr>
-                              <th class="th-sm">
-                                TIMESTAMP
-                              </th>
-                              <th class="th-sm">
-                                ID_T
-                              </th>
-                              <th class="th-sm">
-                                USERNAME_T
-                              </th>
-                              <th class="th-sm">
-                                NAMA_T
-                              </th>
-                              <th class="th-sm">
-                                NAMA
-                              </th>
-                              <th class="th-sm">
-                                AIMS
-                              </th>
-                              <th class="th-sm">
-                                GENDER
-                              </th>
-                              <th class="th-sm">
-                                USIA
-                              </th>
-                              <th class="th-sm">
-                                ALAMAT
-                              </th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <tr>
-                              <?php
-
-                                $conn = open_db();
-
-                                    $sql = "SELECT * FROM user";
-                                            
-                                    $query = mysqli_query($conn, $sql);
-                                            
-                                    while ($row = mysqli_fetch_array($query))
-                                    {
-                                      echo '<tr>
-                                            <td>'.$row['timestamp'].'</td>
-                                            <td>'.$row['id_telegram'].'</td>
-                                            <td>'.$row['username_telegram'].'</td>
-                                            <td>'.$row['nama_telegram'].'</td>
-                                            <td>'.$row['nama'].'</td>
-                                            <td>'.$row['aims'].'</td>
-                                            <td>'.$row['gender'].'</td>
-                                            <td>'.$row['usia'].'</td>
-                                            <td>'.$row['alamat'].'</td>
-                                            </tr>';
-                                    }
-                                    
-
-                                close_db($conn);
-                                ?>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
 
               <div class="tab-pane fade" id="list-user-activity" role="tabpanel" aria-labelledby="user-activity">
                 <div class="card mt-3">
@@ -258,67 +180,6 @@
                                             <td>'.$row['gender'].'</td>
                                             <td>'.$row['usia'].'</td>
                                             <td>'.$row['cabang'].'</td>
-                                            <td>'.$row['diagnosis'].'</td>
-                                            </tr>';
-                                    }
-                                    
-
-                                close_db($conn);
-                                ?>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="tab-pane fade" id="list-user-short" role="tabpanel" aria-labelledby="user-short">
-                <div class="card mt-3">
-                  <div class="card-header text-center font-weight-bold">
-                    TABEL USER_SHORT
-                  </div>
-                  <div class="card-body">
-                    <div class="table-wrapper-scroll-y my-custom-scrollbar">
-                      <div class="wrapper-editor">
-
-                        <table id="example" class="table-sm table-hover datatable table table-striped table-bordered" cellspacing="0" width="100%">
-                          <thead class="thead-dark">
-                            <tr>
-                              <th class="th-sm">
-                                TIMESTAMP
-                              </th>
-                              <th class="th-sm">
-                                ID_T
-                              </th>
-                              <th class="th-sm">
-                                USERNAME_T
-                              </th>
-                              <th class="th-sm">
-                                NAMA_T
-                              </th>
-                              <th class="th-sm">
-                                DIAGNOSIS
-                              </th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <tr>
-                              <?php
-
-                                $conn = open_db();
-
-                                    $sql = "SELECT * FROM user_short";
-                                            
-                                    $query = mysqli_query($conn, $sql);
-                                            
-                                    while ($row = mysqli_fetch_array($query))
-                                    {
-                                      echo '<tr>
-                                            <td>'.$row['timestamp'].'</td>
-                                            <td>'.$row['id_telegram'].'</td>
-                                            <td>'.$row['username_telegram'].'</td>
-                                            <td>'.$row['nama_telegram'].'</td>
                                             <td>'.$row['diagnosis'].'</td>
                                             </tr>';
                                     }
