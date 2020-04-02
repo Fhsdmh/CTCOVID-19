@@ -35,10 +35,12 @@
         <div class="row">
           <div class="col-4">
             <div class="list-group" id="list-tab" role="tablist">
+
               <a class="list-group-item list-group-item-action border-top-0 border-left-0 border-right-0 active" id="user_activity" data-toggle="list" href="#list-user-activity" role="tab" aria-controls="user-activity">Tabel User Activity</a>
               <a class="list-group-item list-group-item-action border-top-0 border-left-0 border-right-0" id="user_diagnosis" data-toggle="list" href="#list-user-diagnosis" role="tab" aria-controls="user-diagnosis">Table User Diagnosis</a>
               <a class="list-group-item list-group-item-action border-top-0 border-left-0 border-right-0" id="grafik_user_activity" data-toggle="list" href="#list-grafik-user-activity" role="tab" aria-controls="grafik-user-activity">Grafik User Activity</a>
               <a class="list-group-item list-group-item-action border-top-0 border-left-0 border-right-0" id="grafik_user_diagnosis" data-toggle="list" href="#list-grafik-user-diagnosis" role="tab" aria-controls="grafik-user-diagnosis">Grafik User Diagnosis</a>
+
             </div>
           </div>
         </div>
@@ -195,6 +197,7 @@
                   </div>
                 </div>
               </div>
+
               <div class="tab-pane fade" id="list-grafik-user-activity" role="tabpanel" aria-labelledby="grafik-user-activity">
                 <div class="row">
                   <div class="col-sm-3">
