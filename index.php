@@ -39,6 +39,7 @@
               <a class="list-group-item list-group-item-action border-top-0 border-left-0 border-right-0" id="user_activity" data-toggle="list" href="#list-user-activity" role="tab" aria-controls="user-activity">Tabel User Activity</a>
               <a class="list-group-item list-group-item-action border-top-0 border-left-0 border-right-0" id="user_diagnosis" data-toggle="list" href="#list-user-diagnosis" role="tab" aria-controls="user-diagnosis">Table User Diagnosis</a>
               <a class="list-group-item list-group-item-action border-top-0 border-left-0 border-right-0" id="grafik" data-toggle="list" href="#list-grafik" role="tab" aria-controls="grafik">Grafik</a>
+
             </div>
           </div>
         </div>
@@ -196,7 +197,7 @@
                 </div>
               </div>
 
-              <div class="tab-pane fade" id="list-grafik" role="tabpanel" aria-labelledby="grafik">
+              <div class="tab-pane fade" id="list-grafik-user-activity" role="tabpanel" aria-labelledby="grafik-user-activity">
                 <div class="row">
                   <div class="col-sm-3">
                     <div class="card mt-3">
@@ -289,6 +290,89 @@
                                 $conn = open_db();
 
                                 $sql = mysqli_query($conn, "SELECT * FROM user_activity WHERE diagnosis='cegah'");
+                                $tes = mysqli_num_rows($sql);
+                                echo '<tr>
+                                      '.$tes.'
+                                      </tr>';
+
+                                close_db($conn);
+                              ?>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="tab-pane fade" id="list-grafik-user-diagnosis" role="tabpanel" aria-labelledby="grafik-user-diagnosis">
+                <div class="row">
+                  <div class="col-sm-4">
+                    <div class="card mt-3">
+                      <div class="card-header text-center font-weight-bold">
+                        SEHAT
+                      </div>
+                      <div class="card-body text-center">
+                        <table id="example" class="table-sm table-hover" cellspacing="0" width="100%">
+                          <tbody>
+                            <tr>
+                              <?php
+                                $conn = open_db();
+
+                                $sql = mysqli_query($conn, "SELECT * FROM user_diagnosis WHERE diagnosis='sehat'");
+                                $tes = mysqli_num_rows($sql);
+                                echo '<tr>
+                                      '.$tes.'
+                                      </tr>';
+
+                                close_db($conn);
+                              ?>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-4">
+                    <div class="card mt-3">
+                      <div class="card-header text-center font-weight-bold">
+                        KARANTINA
+                      </div>
+                      <div class="card-body text-center">
+                        <table id="example" class="table-sm table-hover" cellspacing="0" width="100%">
+                          <tbody>
+                            <tr>
+                              <?php
+                                $conn = open_db();
+
+                                $sql = mysqli_query($conn, "SELECT * FROM user_activity WHERE diagnosis='karantina'");
+                                $tes = mysqli_num_rows($sql);
+                                echo '<tr>
+                                      '.$tes.'
+                                      </tr>';
+
+                                close_db($conn);
+                              ?>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-4">
+                    <div class="card mt-3">
+                      <div class="card-header text-center font-weight-bold">
+                        SAKIT
+                      </div>
+                      <div class="card-body text-center">
+                        <table id="example" class="table-sm table-hover" cellspacing="0" width="100%">
+                          <tbody>
+                            <tr>
+                              <?php
+                                $conn = open_db();
+
+                                $sql = mysqli_query($conn, "SELECT * FROM user_activity WHERE diagnosis='sakit'");
                                 $tes = mysqli_num_rows($sql);
                                 echo '<tr>
                                       '.$tes.'
