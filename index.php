@@ -186,7 +186,6 @@
                                             </tr>';
                                     }
                                     
-
                                 close_db($conn);
                                 ?>
                             </tr>
@@ -318,7 +317,7 @@
                               <?php
                                 $conn = open_db();
 
-                                $sql = mysqli_query($conn, "SELECT COUNT(id_telegram) FROM user_activity");
+                                $sql = mysqli_query($conn, "SELECT * FROM user_activity WHERE id_telegram");
                                 $tes = mysqli_num_rows($sql);
                                 echo '<tr>
                                       '.$tes.'
@@ -332,7 +331,6 @@
                       </div>
                     </div>
                   </div>
-            
 
               <div class="tab-pane fade" id="list-grafik-user-diagnosis" role="tabpanel" aria-labelledby="grafik-user-diagnosis">
                 <div class="row">
@@ -428,7 +426,7 @@
                               <?php
                                 $conn = open_db();
 
-                                $sql = mysqli_query($conn, "SELECT COUNT(id_telegram) FROM user_diagnosis");
+                                $sql = mysqli_query($conn, "SELECT * FROM user_diagnosis WHERE id_telegram");
                                 $tes = mysqli_num_rows($sql);
                                 echo '<tr>
                                       '.$tes.'
@@ -442,33 +440,7 @@
                       </div>
                     </div>
                   </div>
-                  <div class="col-sm-4">
-                    <div class="card mt-3">
-                      <div class="card-header text-center font-weight-bold">
-                        JUMLAH CEK KESELURUHAN
-                      </div>
-                      <div class="card-body text-center">
-                        <table id="example" class="table-sm table-hover" cellspacing="0" width="100%">
-                          <tbody>
-                            <tr>
-                              <?php
-                                $conn = open_db();
 
-                                $sql = mysqli_query($conn, "SELECT COUNT(diagnosis) FROM user_diagnosis");
-                                $tes = mysqli_num_rows($sql);
-                                echo '<tr>
-                                      '.$tes.'
-                                      </tr>';
-
-                                close_db($conn);
-                              ?>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                    </div>
-                  </div>
-    
     
 
     <!-- Optional JavaScript -->
