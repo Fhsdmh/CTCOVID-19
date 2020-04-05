@@ -306,6 +306,33 @@
                   </div>
                 </div>
               </div>
+              <div class="col-sm-4">
+                    <div class="card mt-3">
+                      <div class="card-header text-center font-weight-bold">
+                        JUMLAH PENGGUNA UNIK
+                      </div>
+                      <div class="card-body text-center">
+                        <table id="example" class="table-sm table-hover" cellspacing="0" width="100%">
+                          <tbody>
+                            <tr>
+                              <?php
+                                $conn = open_db();
+
+                                $sql = mysqli_query($conn, "SELECT COUNT(id_t) FROM user_activity");
+                                $tes = mysqli_num_rows($sql);
+                                echo '<tr>
+                                      '.$tes.'
+                                      </tr>';
+
+                                close_db($conn);
+                              ?>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+            
 
               <div class="tab-pane fade" id="list-grafik-user-diagnosis" role="tabpanel" aria-labelledby="grafik-user-diagnosis">
                 <div class="row">
@@ -389,6 +416,58 @@
                   </div>
                 </div>
               </div>
+              <div class="col-sm-4">
+                    <div class="card mt-3">
+                      <div class="card-header text-center font-weight-bold">
+                        JUMLAH PENGGUNA UNIK
+                      </div>
+                      <div class="card-body text-center">
+                        <table id="example" class="table-sm table-hover" cellspacing="0" width="100%">
+                          <tbody>
+                            <tr>
+                              <?php
+                                $conn = open_db();
+
+                                $sql = mysqli_query($conn, "SELECT COUNT(id_t) FROM user_diagnosis");
+                                $tes = mysqli_num_rows($sql);
+                                echo '<tr>
+                                      '.$tes.'
+                                      </tr>';
+
+                                close_db($conn);
+                              ?>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-4">
+                    <div class="card mt-3">
+                      <div class="card-header text-center font-weight-bold">
+                        JUMLAH CEK KESELURUHAN
+                      </div>
+                      <div class="card-body text-center">
+                        <table id="example" class="table-sm table-hover" cellspacing="0" width="100%">
+                          <tbody>
+                            <tr>
+                              <?php
+                                $conn = open_db();
+
+                                $sql = mysqli_query($conn, "SELECT COUNT(diagnosis) FROM user_diagnosis");
+                                $tes = mysqli_num_rows($sql);
+                                echo '<tr>
+                                      '.$tes.'
+                                      </tr>';
+
+                                close_db($conn);
+                              ?>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
     
     
 
