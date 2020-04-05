@@ -318,7 +318,7 @@
                               <?php
                                 $conn = open_db();
 
-                                $sql = mysqli_query($conn, "SELECT COUNT(id_t) FROM user_activity");
+                                $sql = mysqli_query($conn, "SELECT COUNT(id_telegram) FROM user_activity");
                                 $tes = mysqli_num_rows($sql);
                                 echo '<tr>
                                       '.$tes.'
@@ -428,7 +428,7 @@
                               <?php
                                 $conn = open_db();
 
-                                $sql = mysqli_query($conn, "SELECT COUNT(id_t) FROM user_diagnosis");
+                                $sql = mysqli_query($conn, "SELECT COUNT(id_telegram) FROM user_diagnosis");
                                 $tes = mysqli_num_rows($sql);
                                 echo '<tr>
                                       '.$tes.'
